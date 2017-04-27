@@ -1,0 +1,20 @@
+{
+  "name": "ziyuanjun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "express": "^4.15.2",
+    "mocha": "^3.3.0",
+    "nunjucks": "^3.0.0",
+    "sequelize": "^3.30.4",
+    "supertest": "^3.0.0"
+  }
+}
