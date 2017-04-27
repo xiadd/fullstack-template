@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
   try {
     await user.save()
   } catch(e) {
-    logger.error(e.stack)
+    next(e)
   }
   res.render('index.njk')
 })
