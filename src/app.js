@@ -9,6 +9,9 @@ const logger = require('./libs/logger')
 
 const app = express()
 
+// 数据库连接
+require('./models')
+
 // 相关中间件
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
