@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // 静态资源目录
-app.use(express.static(path.join(__dirname, 'static')))
+app.use('/static',express.static(path.join(__dirname, 'static')))
 
 // 设置请求日志
 app.use(log4js.connectLogger(log4js.getLogger('access'), { level: log4js.levels.INFO }))

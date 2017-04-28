@@ -1,0 +1,7 @@
+{
+  "name": "资源君",
+  "script": "server.js",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
