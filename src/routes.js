@@ -1,19 +1,17 @@
 const router = require('express').Router()
+const wechat = require('wechat')
 const logger = require('./libs/logger')
 
 const User = require('./models').User
 
-router.get('/', async (req, res, next) => {
-  const user = new User({
-    name: {name: 1},
-    age: 123
-  })
-  try {
-    await user.save()
-  } catch(e) {
-    next(e)
-  }
-  res.render('index.njk')
-})
+const wechatReply = require('./controllers/wechat').wechatReply
+
+const config = {
+  token: '12345',
+  appid: 'wx1ce65521ad23e942',
+  checkSignature: true // 可选，默认为true。由于微信公众平台接口调试工具在明文模式下不发送签名，所以如要使用该测试工具，请将其设置为false
+}
+
+router.use('/wechat',  wechat(config, wechatReply))
 
 module.exports = router

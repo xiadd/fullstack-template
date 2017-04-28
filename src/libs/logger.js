@@ -4,6 +4,11 @@ log4js.configure({
   appenders: [
     {
       type: 'DateFile',
+      filename: 'logs/access.log',
+      category: 'access'
+    },
+    {
+      type: 'DateFile',
       filename: 'logs/error.log',
       pattern: '-yyyy-MM-dd.log',
       // alwaysIncludePattern: true,

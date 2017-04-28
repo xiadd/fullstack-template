@@ -18,7 +18,8 @@
     "log4js": "^1.1.1",
     "mocha": "^3.3.0",
     "mongoose": "^4.9.6",
-    "nunjucks": "^3.0.0"
+    "nunjucks": "^3.0.0",
+    "wechat": "^2.1.0"
   },
   "devDependencies": {
     "webpack": "^2.4.1",
