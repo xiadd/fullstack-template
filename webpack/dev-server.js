@@ -16,7 +16,8 @@ if (process.env.NODE_ENV === 'development') {
 const app = express()
 
 app.use(webpackMiddleware(webpack(webpackDev), {
-  quiet: true
+  quiet: true,
+  watch: true
 }))
 
 module.exports = app

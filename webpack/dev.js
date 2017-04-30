@@ -74,6 +74,7 @@ module.exports = {
       allChunks: true
     }),
     new ManifestPlugin({
+      basePath: '/static/',
       writeToFileEmit: true
     }),
     new FriendlyErrorsWebpackPlugin(),

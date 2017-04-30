@@ -1,2 +1,1 @@
-alert(1)
-require('../styles/index.css')
+alert(10)
