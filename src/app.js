@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // 静态资源目录
-app.use('/static',express.static(path.join(__dirname, 'static')))
+app.use('/static',express.static(path.join(__dirname, 'static/dist')))
 
 // 设置请求日志
 app.use(log4js.connectLogger(log4js.getLogger('access'), { level: log4js.levels.INFO }))
@@ -30,6 +30,12 @@ nunjucks.configure(path.join(__dirname, 'views'), {
 
 // 路由引入
 app.use(router)
+
+if (process.env.NODE_ENV === 'development') {
+  // 开发配置
+  const devServerApp = require('../webpack/dev-server')
+  app.use('/static',devServerApp)
+}
 
 // 错误全局处理
 app.use(function (err, req, res, next) {
