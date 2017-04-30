@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack --config webpack/dev.js",
-    "dev": "nodemon -w --dump server",
+    "dev": "nodemon --ext js,json,njk server",
     "start": "npm run build && pm2 start pm2.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

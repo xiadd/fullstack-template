@@ -31,12 +31,6 @@ nunjucks.configure(path.join(__dirname, 'views'), {
 // 路由引入
 app.use(router)
 
-if (process.env.NODE_ENV === 'development') {
-  // 开发配置
-  const devServerApp = require('../webpack/dev-server')
-  app.use('/static',devServerApp)
-}
-
 // 错误全局处理
 app.use(function (err, req, res, next) {
   if (!err) {
