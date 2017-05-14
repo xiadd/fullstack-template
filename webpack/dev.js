@@ -43,6 +43,13 @@ module.exports = {
         })
       },
       {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?sourceMap&minimize!sass-loader?sourceMap'
+        })
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         query: {
@@ -63,7 +70,10 @@ module.exports = {
   resolve: {
     modules: [ 'node_modules' ],
     extensions: ['.js', '.json', '.css'],
-    alias: {}
+    alias: {
+      'styles': path.resolve(__dirname, '../src/static/styles'),
+      'scripts': path.resolve(__dirname, '../src/static/scripts')
+    }
   },
   plugins: [
     new CleanPlugin(['*'], {
@@ -74,8 +84,9 @@ module.exports = {
       allChunks: true
     }),
     new ManifestPlugin({
-      basePath: '/static/',
-      writeToFileEmit: true
+      publicPath: '/static/',
+      writeToFileEmit: true,
+      stripSrc: '/static/'
     }),
     new FriendlyErrorsWebpackPlugin(),
   ]

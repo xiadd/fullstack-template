@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>资源君</title>
     {% block styles %}
-    <link rel="stylesheet" href="/static/styles/weui.min.css">
+    <link rel="stylesheet" href="{{ static['index.css'] }}">
     {% endblock %}
   </head>
   <body>
@@ -13,6 +13,6 @@
       this  is default container
     </div>
     {% endblock %}
-    <script src="{{ script['/static/index.js'] }}" charset="utf-8"></script>
+    <script src="{{ static['index.js'] }}" charset="utf-8"></script>
   </body>
 </html>

@@ -16,7 +16,7 @@ const config = {
 
 router.get('/', async function (req, res) {
   const manifest = await fs.readFile(path.resolve(__dirname, 'static/dist/manifest.json'))
-  res.render('index.njk', { script: JSON.parse(manifest.toString()) })
+  res.render('index.njk', { static: JSON.parse(manifest.toString()) })
 })
 
 router.use('/wechat',  wechat(config, wechatReply))
